@@ -115,9 +115,11 @@ def make_image_from_sinogram(sin_file, reco_dir, l_spread=0.5, use_filter=False)
                 while nextline!=len(beams) and det(beams[nextline], (x, y))>0:
                     nextline+=1
                 if nextline==0:
-                    data[x+y*w]+=view[nextline]
+                    pass
+                    #data[x+y*w]+=view[nextline]
                 elif nextline==len(beams):
-                    data[x+y*w]+=view[-1]
+                    pass
+                    #data[x+y*w]+=view[-1]
                 else:
                     d1=dist_point_line(beams[nextline-1], (x,y))
                     d2=dist_point_line(beams[nextline], (x,y))
